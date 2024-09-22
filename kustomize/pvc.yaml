@@ -1,0 +1,16 @@
+# openhab.git:kustomize/pvc.yaml
+# notes: Patch this manifest in the overlay with:
+# - namespace
+# - storageClassName, e.g. "storageClassName: longhorn" (defaults to the default StorageClass)
+# - storage regest, e.g. "storage: 200Mi" (defaults to 50Mi)
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openhab-userdata
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi

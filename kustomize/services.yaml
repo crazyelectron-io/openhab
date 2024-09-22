@@ -1,0 +1,37 @@
+# openhab.git:kustomize/services.yaml
+# notes:
+# Patch this manifest in the overlay with:
+# - namespace, e.g. "namespace: automation"
+# - loadBalancerIP, e.g. "loadBalancerIP: 10.100.0.35"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openhab
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  selector:
+    app.kubernetes.io/name: openhab
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openhab-system
+spec:
+  ports:
+    - name: sys-ssh
+      port: 2222
+      targetPort: 2222
+    - name: sys-karaf
+      port: 8101
+      targetPort: 8101
+    - name: sys-lsp
+      port: 5007
+      targetPort: 5007
+  selector:
+    app.kubernetes.io/name: openhab
+  type: LoadBalancer
+  externalTrafficPolicy: Local

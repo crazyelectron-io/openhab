@@ -1,0 +1,22 @@
+# openhab.git:kustomize/ingressroute.yaml
+# notes:
+# Patch this manifest in the overlay with:
+# - namespace, e.g. "namespace: automation"
+# - Traefik IngressRoute annotation, e.g. "kubernetes.io/ingress.class: traefik-external"
+# Define the variables:
+# - OPENHAB_FQDN - the full domain name of the OpenHAB web interface
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: openhab-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`$(OPENHAB_FQDN)`)
+      kind: Rule
+      services:
+        - name: openhab
+          port: 80
+  tls: {}
