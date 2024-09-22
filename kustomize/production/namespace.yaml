@@ -1,0 +1,6 @@
+# openhab.git:kustomize/production/namespace.yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: logging

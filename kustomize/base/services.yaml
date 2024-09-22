@@ -2,7 +2,7 @@
 # notes:
 # Patch this manifest in the overlay with:
 # - namespace, e.g. "namespace: automation"
-# - loadBalancerIP, e.g. "loadBalancerIP: 10.100.0.35"
+# - loadBalancerIP, e.g. "loadBalancerIP: 10.100.100.100"
 ---
 apiVersion: v1
 kind: Service

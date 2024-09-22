@@ -1,0 +1,22 @@
+# openhab.git:kustomize/production/kustomize.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: automation
+resources:
+- ../../base
+- namespace.yaml
+# images:
+# - name: openhab/openhab
+#   newTag: "4.2.1"
+#   newName: $(HARBOR_REGISTRY)/openhab
+# vars:
+#   - name: OPENHAB_FQDN
+#     objref:
+#       kind: Secret
+#       name: openhab
+patchesStrategicMerge:
+  - services.yaml
+  # - pvc.yaml
+  # - deployment.yaml
+  # - ingressroute.yaml
