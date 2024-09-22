@@ -6,5 +6,9 @@ namespace: automation
 resources:
 - ../base
 - namespace.yaml
+components:
+  - ../components/replace-domain
 patchesStrategicMerge:
 - services.yaml
+- secrets.yaml
+- ingressroute.yaml

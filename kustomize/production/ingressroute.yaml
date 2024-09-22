@@ -1,0 +1,16 @@
+# openhab.git:kustomize/production/ingressroute.yaml
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: openhab-external
+  namespace: automation
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  routes:
+    - match: "Host(`oh.moerman.online`)"
+      kind: Rule
+      # services:
+      #   - name: openhab
+      #     port: 80

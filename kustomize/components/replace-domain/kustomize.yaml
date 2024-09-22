@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+replacements:
+  - source:
+      kind: Secret
+      name: openhab
+      fieldPath: data.openhab_fqdn
+    targets:
+      - select:
+          kind: IngressRoute
+          name: openhab
+        fieldPaths:
+          - spec.routes.match.value

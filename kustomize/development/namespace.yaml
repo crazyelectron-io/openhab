@@ -1,0 +1,6 @@
+# openhab.git:kustomize/development/namespace.yaml
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: automation-dev

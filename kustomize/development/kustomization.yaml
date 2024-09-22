@@ -1,0 +1,10 @@
+# openhab.git:kustomize/development/kustomization.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: automation-dev
+resources:
+- ../base
+- namespace.yaml
+patchesStrategicMerge:
+- services.yaml

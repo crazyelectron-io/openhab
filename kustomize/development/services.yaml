@@ -1,0 +1,8 @@
+# openhab.git:kustomize/production/services.yaml
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openhab-system
+spec:
+  loadBalancerIP: 10.100.100.35
