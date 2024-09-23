@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: automation
 resources:
 - ../base
+- secrets.yaml
 - namespace.yaml
 replacements:
   - source:
