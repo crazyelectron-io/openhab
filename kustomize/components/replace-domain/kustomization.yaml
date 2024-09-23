@@ -3,8 +3,9 @@ kind: Component
 replacements:
   - source:
       kind: Secret
-      # apiVersion: v1
+      version: v1
       name: openhab
+      namespace: 
       fieldPath: data.openhab_fqdn
     targets:
       - select:
