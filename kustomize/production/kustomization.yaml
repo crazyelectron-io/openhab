@@ -6,8 +6,21 @@ namespace: automation
 resources:
 - ../base
 - namespace.yaml
-components:
-  - ../components/replace-domain
+replacements:
+  - source:
+      kind: Secret
+      version: v1
+      name: openhab
+      namespace: automation
+      fieldPath: data.openhab_fqdn
+    targets:
+      - select:
+          kind: IngressRoute
+          # apiVersion: traefik.io/v1alpha1
+          name: openhab
+          namespace: automation
+        fieldPaths:
+          - spec.routes.match.value
 patchesStrategicMerge:
 - services.yaml
 - secrets.yaml
