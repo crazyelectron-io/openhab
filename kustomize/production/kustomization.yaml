@@ -6,6 +6,7 @@ namespace: automation
 resources:
 - ../base
 - secrets.yaml
+- ingressroute.yaml
 - namespace.yaml
 replacements:
   - source:
@@ -17,7 +18,7 @@ replacements:
     targets:
       - select:
           kind: IngressRoute
-          version: traefik.io/v1alpha1
+          # version: traefik.io/v1alpha1
           name: openhab
           namespace: automation
         fieldPaths:
