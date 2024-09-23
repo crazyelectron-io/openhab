@@ -3,11 +3,13 @@ kind: Component
 replacements:
   - source:
       kind: Secret
+      apiVersion: v1
       name: openhab
       fieldPath: data.openhab_fqdn
     targets:
       - select:
           kind: IngressRoute
+          apiVersion: traefik.io/v1alpha1
           name: openhab
         fieldPaths:
           - spec.routes.match.value
