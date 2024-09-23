@@ -17,7 +17,7 @@ replacements:
     targets:
       - select:
           kind: IngressRoute
-          # apiVersion: traefik.io/v1alpha1
+          version: traefik.io/v1alpha1
           name: openhab
           namespace: automation
         fieldPaths:
