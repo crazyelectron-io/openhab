@@ -11,16 +11,16 @@ resources:
 replacements:
   - source:
       kind: Secret
-      version: v1
+      # version: v1
       name: openhab
-      namespace: automation
+      # namespace: automation
       fieldPath: data.openhab_fqdn
     targets:
       - select:
           kind: IngressRoute
-          version: traefik.io/v1alpha1
+          # version: traefik.io/v1alpha1
           name: openhab
-          namespace: automation
+          # namespace: automation
         fieldPaths:
           - spec.routes.match.value
 patchesStrategicMerge:
