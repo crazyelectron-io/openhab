@@ -14,3 +14,43 @@ spec:
         - name: openhab
           port: 80
   tls: {}
+
+kustomize build failed: namespace transformation produces ID conflict: 
+{
+  "apiVersion":"traefik.io/v1alpha1",
+  "kind":"IngressRoute",
+  "metadata": 
+  {
+    "annotations":
+    {
+      "internal.config.kubernetes.io/previousKinds":"IngressRoute",
+      "internal.config.kubernetes.io/previousNames":"openhab",
+      "internal.config.kubernetes.io/previousNamespaces":"default"
+    },
+    "name":"openhab",
+    "namespace":"automation"
+  },
+  "spec":
+  {
+    "entryPoints":["websecure"],
+    "routes":[{"kind":"Rule","match":"Host(`openhab.example.com`)","services":[{"name":"openhab","port":80}]}],
+    "tls":{}
+  }
+}
+{
+  "apiVersion":"traefik.io/v1alpha1",
+  "kind":"IngressRoute",
+  "metadata":
+  {
+    "annotations":
+    {
+      "kubernetes.io/ingress.class":"traefik-external"
+    },
+    "name":"openhab",
+    "namespace":"automation"
+  },
+  "spec":
+  {
+    "routes":[{"kind":"Rule","match":"Host(`oh.moerman.online`)"}]
+  }
+}
