@@ -5,7 +5,7 @@ kind: Kustomization
 namespace: automation
 resources:
 - ../base
-- secrets.yaml
+# - secrets.yaml
 - ingressroute.yaml
 - namespace.yaml
 replacements:
