@@ -12,7 +12,7 @@ replacements:
       version: v1
       name: openhab
       # namespace: automation
-      fieldPath: data.openhab_fqdn
+      fieldPath: stringData.openhab_fqdn
     targets:
       - select:
           kind: IngressRoute
