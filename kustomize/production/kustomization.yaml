@@ -10,7 +10,7 @@ resources:
 replacements:
   - source:
       kind: Secret
-      # version: v1
+      version: v1
       name: openhab
       # namespace: automation
       fieldPath: data.openhab_fqdn
