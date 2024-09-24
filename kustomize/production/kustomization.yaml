@@ -20,7 +20,7 @@ replacements:
           name: openhab
           # namespace: automation
         fieldPaths:
-          - spec.routes.match.value
+          - spec.routes[0].match.value
 patchesStrategicMerge:
 - services.yaml
 - secrets.yaml
