@@ -5,4 +5,5 @@ kind: Kustomization
 resources:
   - services.yaml
   - ingressroute.yaml
+  - secrets.yaml
   
