@@ -12,7 +12,7 @@ replacements:
       kind: Secret
       version: v1
       name: openhab
-      # namespace: automation
+      namespace: automation
       fieldPath: data.openhab_fqdn
     targets:
       - select:
