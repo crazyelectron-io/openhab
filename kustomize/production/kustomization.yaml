@@ -24,4 +24,4 @@ replacements:
 patchesStrategicMerge:
 - services.yaml
 - secrets.yaml
-- ingressroute.yaml
+# - ingressroute.yaml
