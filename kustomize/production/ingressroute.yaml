@@ -11,6 +11,6 @@ spec:
   routes:
     - match: "Host(`oh.moerman.online`)"
       kind: Rule
-      # services:
-      #   - name: openhab
-      #     port: 80
+      services:
+        - name: openhab
+          port: 80
