@@ -6,7 +6,6 @@ namespace: automation
 resources:
 - ../base
 # - secrets.yaml
-- ingressroute.yaml
 - namespace.yaml
 replacements:
   - source:
