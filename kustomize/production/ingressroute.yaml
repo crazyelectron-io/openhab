@@ -5,8 +5,8 @@ kind: IngressRoute
 metadata:
   name: openhab
   # namespace: automation
-  annotations:
-    kubernetes.io/ingress.class: traefik-external
+  # annotations:
+  #   kubernetes.io/ingress.class: traefik-external
 spec:
   routes:
     - match: "Host(`oh.moerman.online`)"
