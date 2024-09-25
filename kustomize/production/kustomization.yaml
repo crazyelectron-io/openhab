@@ -15,13 +15,13 @@ patchesStrategicMerge:
 images:
   - name: openssh-server
     newTag: "1.0"
-    newName: registry.moerman.online/openssh-server
+    newName: registry.moerman.online/library/openssh-server
   - name: configmap-reload
     newTag: "v0.13.1"
-    newName: registry.moerman.online/configmap-reload
+    newName: registry.moerman.online/library/configmap-reload
   - name: openhab
     newTag: 4.2.1
-    newName: registry.moerman.online/openhab
+    newName: registry.moerman.online/library/openhab
   - name: alloy
     newTag: v1.3.1
-    newName: registry.moerman.online/alloy
+    newName: registry.moerman.online/library/alloy
