@@ -24,12 +24,4 @@ replacements:
 patchesStrategicMerge:
 - services.yaml
 - secrets.yaml
-patches:
-  - target:
-      version: traefik.io/v1alpha1
-      kind: IngressRoute
-      name: openhab
-    patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`oh.moerman.online`)
+- ingressroute-patch.yaml
