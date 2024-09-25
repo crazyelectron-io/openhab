@@ -60,12 +60,12 @@ spec:
                 key: tz
           - name: USER_NAME
             valueFrom:
-              secretRef:
+              secretKeyRef:
                 name: openhab
                 key: openhab_user
           - name: PUBLIC_KEY_URL
             valueFrom:
-              secretRef:
+              secretKeyRef:
                 name: openhab
                 key: public_key_url
           - name: SUDO_ACCESS
