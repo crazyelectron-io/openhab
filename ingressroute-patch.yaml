@@ -1,15 +1,13 @@
-# openhab.git: kustomize/base/ingressroute.yaml
+# openhab.git: kustomize/production/ingressroute-patch.yaml
 ---
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: openhab
 spec:
-  entryPoints:
-    - websecure
   routes:
     - kind: Rule
-      match: "Host(`fixme.example.com`)"
+      match: "Host(`oh.moerman.online`)"
       services:
         - kind: Service
           name: openhab
