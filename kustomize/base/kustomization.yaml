@@ -7,4 +7,6 @@ resources:
   - ingressroute.yaml
   - secrets.yaml
   - volumes.yaml
+  - configmaps.yaml
+  - deployment.yaml
   

@@ -1,0 +1,14 @@
+# kustomize/base/configmaps.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: openhab-env
+data:
+  tz: "UTC"
+  crypto_policy: "limited"
+  extra_java_opts: "-Duser.timezone=UTC"
+  openhab_http_port: "8080"
+  openhab_https_port: "8443"
+  user_id: "9001"
+  group_id: "9001"

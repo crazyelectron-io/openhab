@@ -1,0 +1,10 @@
+# kustomize/production/configmaps.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: openhab-env
+data:
+  tz: "Europe?Amsterdam"
+  crypto_policy: "unlimited"
+  extra_java_opts: "-Duser.timezone=Europe/Amsterdam"
