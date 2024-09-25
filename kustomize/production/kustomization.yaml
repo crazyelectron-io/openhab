@@ -10,3 +10,4 @@ patchesStrategicMerge:
 - services-patch.yaml
 - secrets-patch.yaml
 - ingressroute-patch.yaml
+- volumes-patch.yaml

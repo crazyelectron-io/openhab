@@ -1,0 +1,11 @@
+# kustomize/production/volumes.yaml
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openhab-data
+spec:
+  storageClassName: longhorn
+  resources:
+    requests:
+      storage: 4Gi

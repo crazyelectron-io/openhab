@@ -1,0 +1,12 @@
+# kustomize/base/volumes.yaml
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: openhab-data
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi # To be replaced in patch
