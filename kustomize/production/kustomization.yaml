@@ -22,6 +22,6 @@ replacements:
         fieldPaths:
           - spec.routes[0].match.value
 patchesStrategicMerge:
-- services.yaml
-- secrets.yaml
+- services-patch.yaml
+- secrets-patch.yaml
 - ingressroute-patch.yaml
