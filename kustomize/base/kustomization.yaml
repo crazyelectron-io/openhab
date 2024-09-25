@@ -6,4 +6,5 @@ resources:
   - services.yaml
   - ingressroute.yaml
   - secrets.yaml
+  - volumes.yaml
   
