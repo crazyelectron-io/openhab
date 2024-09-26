@@ -6,6 +6,7 @@ namespace: automation
 resources:
 - ../base
 - namespace.yaml
+- ../configuration
 patchesStrategicMerge:
 - services-patch.yaml
 - secrets-patch.yaml
