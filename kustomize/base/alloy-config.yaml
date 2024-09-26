@@ -45,6 +45,6 @@ data:
     // Write the filtered and tagged openHAB logs to Loki
     loki.write "grafana_loki" {
       endpoint {
-        url = "http://loki-svc.logging.svc.cluster.local:3100/loki/api/v1/push"
+        url = "env("LOKI_URL")
       }
     }
