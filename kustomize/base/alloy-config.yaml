@@ -45,6 +45,6 @@ data:
     // Write the filtered and tagged openHAB logs to Loki
     loki.write "grafana_loki" {
       endpoint {
-        url = "env("LOKI_URL")
+        url = env("LOKI_URL")
       }
     }
