@@ -1,4 +1,4 @@
-# kustomize/base/config/runtime.yaml
+# kustomize/base/configuration/runtime-cfg.yaml
 ---
 apiVersion: v1
 kind: ConfigMap
