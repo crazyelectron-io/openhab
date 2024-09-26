@@ -1,0 +1,50 @@
+# kustomize/base/alloy-config.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  openhab-alloy
+data:
+  config.alloy: |
+    logging {
+      level = "info"
+      format = "logfmt"
+    }
+    // Monitor openHAB log files (returns an array of file paths)
+    local.file_match "openhab_logs" {
+      path_targets = [{
+        __path__  = "/openhab/userdata/logs/*.log",
+        job       = "node/openhab",
+        node_name = env("HOSTNAME"),
+        cluster   = "homekube",
+      }]
+      // sync_period = "5s"
+    }
+    // Read openHAB logs from the Pod and forward them to the Loki receiver.
+    loki.source.file "openhab_scrape" {
+      targets       = local.file_match.openhab_logs.targets
+      forward_to    = [loki.process.filter_logs.receiver]
+      tail_from_end = true
+    }
+    // Receive log entreis from openHAB, add a label to it and
+    //  forward the result to the default loki writer.
+    loki.process "filter_logs" {
+      stage.drop {
+        source = ""
+        expression  = ".*Connection closed by authenticating user root"
+        drop_counter_reason = "noisy"
+      }
+      stage.static_labels {
+        values = {
+          cluster = "homekube",
+          app = "openhab",
+        }
+      }
+      forward_to = [loki.write.grafana_loki.receiver]
+    }
+    // Write the filtered and tagged openHAB logs to Loki
+    loki.write "grafana_loki" {
+      endpoint {
+        url = "http://loki-svc.logging.svc.cluster.local:3100/loki/api/v1/push"
+      }
+    }

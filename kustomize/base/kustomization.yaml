@@ -8,5 +8,6 @@ resources:
   - secrets.yaml
   - volumes.yaml
   - configmaps.yaml
+  - alloy-config.yaml
   - deployment.yaml
   
