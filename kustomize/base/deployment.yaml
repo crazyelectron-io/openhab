@@ -172,8 +172,9 @@ spec:
                 fieldPath: spec.nodeName
           - name: LOKI_URL
             valueFrom:
-              configMapRef:
+              configMapKeyRef:
                 name: openhab-env
+                key: loki_url
           ports:
           - containerPort: 12345
             name: http-metrics
