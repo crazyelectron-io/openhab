@@ -1,0 +1,1 @@
+Thing ntp:ntp:local [ hostname="nl.pool.ntp.org" ]
