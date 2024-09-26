@@ -170,6 +170,10 @@ spec:
               fieldRef:
                 apiVersion: v1
                 fieldPath: spec.nodeName
+          - name: LOKI_URL
+            valueFrom:
+              configMapRef:
+                name: openhab-env
           ports:
           - containerPort: 12345
             name: http-metrics
