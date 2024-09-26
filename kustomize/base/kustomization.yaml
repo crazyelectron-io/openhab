@@ -10,5 +10,4 @@ resources:
   - configmaps.yaml
   - alloy-config.yaml
   - deployment.yaml
-  - services/runtime-cfg.yaml
   
