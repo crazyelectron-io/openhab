@@ -1,4 +1,4 @@
-# kustomize/production/services/ephemeris-cfg.yaml
+# kustomize/base/services/ephemeris-cfg.yaml
 ---
 apiVersion: v1
 kind: ConfigMap

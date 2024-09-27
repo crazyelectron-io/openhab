@@ -6,4 +6,60 @@ metadata:
   name:  openhab-conf-services-runtime-cfg
 data:
   runtime.cfg: |
-    ### fill-me-in ###
+        #################################### LOCALE ####################################
+        #org.openhab.i18n:language=
+        org.openhab.i18n:region="nl"
+        org.openhab.i18n:timezone=UTC
+        #org.openhab.i18n:location=
+        org.openhab.i18n:measurementSystem=SI
+        ################################# PERSISTENCE ##################################
+        org.openhab.persistence:default=influxdb
+        #################################### AUDIO #####################################
+        #org.openhab.audio:defaultSource=
+        #org.openhab.audio:defaultSink=
+        ################################### SITEMAP ####################################
+        org.openhab.sitemap:groupMembersSorting=NONE
+        #################################### CHART #####################################
+        #org.openhab.chart:defaultHeight=240
+        #org.openhab.chart:defaultWidth=480
+        #org.openhab.chart:scale=1
+        #org.openhab.chart:maxWidth=
+        ################################### NETWORK ####################################
+        #org.openhab.network:primaryAddress=
+        #org.openhab.network:useOnlyOneAddress=false
+        #org.openhab.network:useIPv6=true
+        ################################## EPHEMERIS ###################################
+        #org.openhab.ephemeris:country="nl"
+        ################################# MISCELLANOUS #################################
+        org.apache.karaf.shell:sshHost = 0.0.0.0
+        #org.openhab.cors:enable=true
+        ################################### REST API ###################################
+        #org.openhab.restauth:allowBasicAuth=true
+        #org.openhab.restauth:cacheExpiration=6
+        #org.openhab.restauth:implicitUserRole=false
+        org.openhab.restauth:trustedNetworks=127.0.0.1/32, 10.0.0.0/8
+        ############################### LANGUAGE SERVER ################################
+        org.openhab.lsp:port=5007
+        ################################# JSON STORAGE #################################
+        org.openhab.storage.json:backup_files=7
+        #org.openhab.storage.json:write_delay=500
+        #org.openhab.storage.json:max_defer_delay=30000
+        ################################# MARKETPLACE ##################################
+        #org.openhab.marketplace:enable=true
+        ############################# JSON ADD-ON SERVICE ##############################
+        # Pipe (|) separated list of URLS that provide 3rd party add-on services via Json files.
+        #org.openhab.jsonaddonservice:urls=
+        org.openhab.jsonaddonservice:showUnstable=false
+        #################################### INBOX #####################################
+        org.openhab.inbox:autoIgnore=true
+        org.openhab.inbox:autoApprove=false
+        # Disable discovery for Hue and Daikin binding things and channels.
+        discovery.hue:background=false
+        discovery.daikin:background=false
+        ################################## WEBCLIENT ###################################
+        # For installations on higher end systems with many cores, increasing number of webclient threads
+        # may be necessary. Usually, this is reported with "Insufficient configured threads" in the logs.
+        org.openhab.webclient:minThreadsShared = 20
+        org.openhab.webclient:maxThreadsShared = 80
+        org.openhab.webclient:minThreadsCustom = 20
+        org.openhab.webclient:maxThreadsCustom = 40

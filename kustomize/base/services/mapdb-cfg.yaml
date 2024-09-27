@@ -1,4 +1,4 @@
-# kustomize/production/services/mapdb-cfg.yaml
+# kustomize/base/services/mapdb-cfg.yaml
 ---
 apiVersion: v1
 kind: ConfigMap

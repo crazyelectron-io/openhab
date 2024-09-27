@@ -13,6 +13,7 @@ patchesStrategicMerge:
 - ingressroute-patch.yaml
 - volumes-patch.yaml
 - configmaps-patch.yaml
+- ./services
 images:
   - name: openssh-server
     newTag: "1.0"
