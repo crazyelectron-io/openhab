@@ -136,6 +136,9 @@ spec:
             - name: openhab-data
               mountPath: /openhab/conf
               subPath: conf
+            - name: runtime-cfg
+              mountPath: /openhab/conf/services
+              readOnly: true
             - name: openhab-data
               mountPath: /openhab/userdata
               subPath: userdata
@@ -190,6 +193,13 @@ spec:
             defaultMode: 420
             name: openhab-alloy
           name: config
+        - name: runtime-cfg
+          configMap:
+            defaultMode: 420
+            name: openhab-conf-services-runtime-cfg
+            items:
+            - key: runtime.cfg
+              path: services/runtime.cfg
         - name: kube-api-access-fkctk
           projected:
             defaultMode: 420
