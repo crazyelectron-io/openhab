@@ -1,0 +1,10 @@
+# openhab.git:kustomize/production/services/kustomization.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: automation
+resources:
+- addons-cfg.yaml
+- basicui-cfg.yaml
+- influxdb-cfg.yaml
+- runtime-cfg.yaml
