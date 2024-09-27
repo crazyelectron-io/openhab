@@ -1,0 +1,9 @@
+# kustomize/base/services/runtime-cfg.yaml
+---
+apiVersion: v1
+kind: Secrets
+metadata:
+  name:  openhab-conf-services-runtime-cfg
+data:
+  runtime.cfg: |
+    ### fill-me-in ###

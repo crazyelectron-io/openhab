@@ -1,0 +1,27 @@
+# kustomize/production/services/influxdb-cfg.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+    name: openhab-conf-services-influxdb-cfg
+data:
+    influxdb.cfg: ENC[AES256_GCM,data:h54wj5P00IslwDgidfi+Yh0lm4LgC1ZGU6WlKcTSpV+QjUEmDv3AFQ/MIQNMjIJqzkxIZVzPh4LN9VZMclWAunBoKMlCRgJMeBV/P1jC3JnF/+Dkb0sM+T4sxSxBeO512WsFnrAod46TWUrCtqhVegoTU1nwbNcQiOKlB9F909CQMDo5YwFMY50LV4xzddTrFb31uPNAF8iYU3tG2Rtuhgl0/1Qo67DcZxtL61GoEoCGmNbyjPqe3KtL9Ppc5GTlxQgKiLEhr6aRbqjKBZVyBETZw2FfksrW0+388q4b5FoPmilM+cBRtXPoaiSFSoAPwZA+QsFGkbsVdQeM+ECJl3aDrBoDAOO7yg6uo6LGFr9hsGvyMol4zr4xrX8gTfel/X0LiCgGG13hHWrWOh2xCJjLYBGtoJ5SWZp2CBZl086JfgGyOLyAogDU+eboUvVviGRS7eNMnUFTjHB9e+w2825SOV+tuBaChphIzG58++ufI5aiZUdCqD2+Kw==,iv:WAJ9BtM92HCJuBmAQOOvmAvwzUIt0x+igGVyDJ3M9Lk=,tag:pYizkzsgWpzIJmHCspYt8w==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age109fzapgarv59gpyu5tgmwgn7j3hwmfs0dhrz3lrqvjy046jxafnse30kvj
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBab2ZsZVB3TDJZUEFqMHJL
+            VlNyMnRLVG9hMmJTNFB4RUFGUGdHamFGV2pjCnB6d3JBZEtNc2IwN2l6Q2RjVzJF
+            d1Z3ZTRlZnFGd2hESkZIN2lwUWoxY3cKLS0tIEV4ZUlCWHpxNFJWTXR1RWRUNmp4
+            NlpVbTlGeldLa0VQSDF6MXVNZWhrZ2MKgCF6wpN2ZkRPSm/tSxvYd5CT6fyfFXF0
+            Sul6o6GBo7Yxgfw3ZGfqVzv7RY+7i6gJh5+guuJv4nbjfCjp6LsoyA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-09-27T09:59:23Z"
+    mac: ENC[AES256_GCM,data:BwkjYpqnAfVajHxdQZLqKyfxt8YkTfF2/al1oPiL4SbEUvSvgfaSO1LbsX/+LniCTNkBXzUmV19gOCSWIv3Q16LB2bayD3CrH6Vy2UwMm9NdPwKjZtpDpQk5eU2r81oAHfE2X3aWt07LQ4kMX7QuR6jnTeiB+5LAMqnRgcK/STM=,iv:+Y1As++fQvuRnXNP/v2Z3lVawoWzQrk3hMob12Ws8ek=,tag:gZarped5rNBMbFw2jOQ4YQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.9.0

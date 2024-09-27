@@ -1,0 +1,9 @@
+# kustomize/base/services/addons-cfg.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  openhab-conf-services-addons-cfg
+data:
+  runtime.cfg: |
+    ### fill-me-in ###

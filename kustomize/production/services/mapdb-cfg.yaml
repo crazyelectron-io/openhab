@@ -1,0 +1,12 @@
+# kustomize/production/services/mapdb-cfg.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  openhab-conf-services-mapdb-cfg
+data:
+  mapdb.cfg: |
+    # the commit interval in seconds (optional, default to '5')
+    commitinterval=5
+    # issue a commit even if the state did not change (optional, defaults to 'false')
+    commitsamestate=false

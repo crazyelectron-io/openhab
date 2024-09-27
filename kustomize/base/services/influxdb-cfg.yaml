@@ -1,0 +1,9 @@
+# kustomize/base/services/influxdb-cfg.yaml
+---
+apiVersion: v1
+kind: Secrets
+metadata:
+  name:  openhab-conf-services-influxdb-cfg
+data:
+  influxdb.cfg: |
+    ### fill-me-in ###

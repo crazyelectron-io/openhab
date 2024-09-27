@@ -1,17 +1,17 @@
-# kustomize/base/configuration/addons-cfg.yaml
+# kustomize/production/services/addons-cfg.yaml
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name:  openhab-addons-cfg
+  name:  openhab-conf-services-addons-cfg
 data:
-  addons.cfg: |
+  runtime.cfg: |
     # Access Remote Add-on Repository
     # Defines whether the remote openHAB add-on repository should be used for browsing and installing add-ons. (default is true)
     remote = true
     #
     # Some add-on services may provide add-ons where compatibility with the currently running system is not expected.
-    #includeIncompatible = false
+    includeIncompatible = false
     #
     # The system can automatically suggest add-ons for installation using add-on finders.
     # If you don't want add-on suggestions from specific finders, you can disable the respective finders.
@@ -28,10 +28,10 @@ data:
     # openHAB and then comment the list.
     #
     # A comma-separated list of automation services to install (e.g. "automation = groovyscripting")
-    #automation = 
+    automation = jsscripting,jrubyscripting
     #
     # A comma-separated list of bindings to install (e.g. "binding = knx,sonos,zwave")
-    binding = astro,ntp,buienradar,hue,http,mqtt,volvooncall
+    binding = astro,ntp,buienradar,hue,http,mqtt,volvooncall,solaredge,daikin,melcloud,shelly
     #
     # A comma-separated list of miscellaneous services to install (e.g. "misc = openhabcloud")
     #misc = 
@@ -40,7 +40,7 @@ data:
     persistence = mapdb,influxdb
     #
     # A comma-separated list of transformation services to install (e.g. "transformation = jsonpath,map")
-    transformation = jsonpath,map
+    transformation = jsonpath,javascript,exec,scale,regex,map
     #
     # A comma-separated list of UIs to install (e.g. "ui = basic,habpanel")
     ui = basic,habpanel

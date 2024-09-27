@@ -1,0 +1,12 @@
+# kustomize/production/services/ephemeris-cfg.yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name:  openhab-conf-services-ephemeris-cfg
+data:
+  ephemeris.cfg: |
+    country=nl
+    dayset-workday=[MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY]
+    dayset-weekend=[SATURDAY,SUNDAY]
+    dayset-trash=[FRIDAY]
