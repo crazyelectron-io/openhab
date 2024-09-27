@@ -7,7 +7,7 @@ resources:
 - ../base
 - namespace.yaml
 - ./services
-patches:
+patchesStrategicMerge:
 - services-patch.yaml
 - secrets-patch.yaml
 - ingressroute-patch.yaml
