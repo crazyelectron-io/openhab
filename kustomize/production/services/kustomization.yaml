@@ -6,5 +6,5 @@ namespace: automation
 resources:
 - addons-cfg.yaml
 - basicui-cfg.yaml
-- influxdb-cfg.yaml
-- runtime-cfg.yaml
+- influxdb-cfg.sops.yaml
+- runtime-cfg.sops.yaml
