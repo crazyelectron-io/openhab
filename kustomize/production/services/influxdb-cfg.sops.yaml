@@ -1,6 +1,6 @@
 # kustomize/production/services/influxdb-cfg.yaml
 apiVersion: v1
-kind: Secret
+kind: ConfigMap
 metadata:
     name: openhab-conf-services-influxdb-cfg
 data:
@@ -20,8 +20,8 @@ sops:
             NlpVbTlGeldLa0VQSDF6MXVNZWhrZ2MKgCF6wpN2ZkRPSm/tSxvYd5CT6fyfFXF0
             Sul6o6GBo7Yxgfw3ZGfqVzv7RY+7i6gJh5+guuJv4nbjfCjp6LsoyA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-09-27T14:18:50Z"
-    mac: ENC[AES256_GCM,data:q6V0R2/yN2kO02z8sMqcLxLVb02Ej2oTZOEox2Z3XDCpwPDPfnsviSKdOE5vY9X5YKu/UOZVpUexIbUmW/O/MOevLZGaw20e4nHkgcXdxdwJrIjTqWGVTALNkHuKFD4scxHPVvihCZYLuwrlISEAdJWpbA+eD0Wqlv+JoUvs3H0=,iv:Fsj3pWty/ZApt6XvkOBEqe8r+Wz8UjnH+MCjUYd7JAo=,tag:TdTzYAEE1d3iJMZzgJUNJw==,type:str]
+    lastmodified: "2024-09-27T14:24:39Z"
+    mac: ENC[AES256_GCM,data:E+7nNX+YUG/p9jdcxHhrOT/Je8uo4RL1knN1+HGv1He9iBUxAhZ1ZzPBZXbGwGctjZ2ewbPEKSUmxlGH5cxShQgDozeaqWABHh+VUupIXeOO+9+6u+2t9PBm3YvgY/RO7LCtbyzuY1AfVkvr/O0snMDeJ5esFZ9wXWZ8rEB0E6U=,iv:bRmDYGQ7BFNybode2wLYPRcstpYsw/aSBQku6WMq5kU=,tag:npGeWFa6XiEStv+4idawzA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.0

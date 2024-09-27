@@ -1,6 +1,6 @@
 # kustomize/production/services/runtime-cfg.yaml
 apiVersion: v1
-kind: Secrets
+kind: ConfigMap
 metadata:
     name: openhab-conf-services-runtime-cfg
 data:
@@ -20,8 +20,8 @@ sops:
             c1FiZGltQTVGNDN5L1czanlxZzZDUkUKuE/dOvhwy8GwJKxefBuO6WSxBx5o3CVF
             INJBCg+YJEiyvffsXvA0GMsx0wcHKWbqIo1RBQtr0cxwgNalhG0qlQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-09-27T10:01:48Z"
-    mac: ENC[AES256_GCM,data:N5WaO8gZx7xJf6ODKLoGe/ITUneG3gNHdgetBxgBM5bvfZcAQSRvgiiDEBU1BnanefE/rzoyI4i2i2Jt5KoFtx/Wu7YMxpXjc9C2LLPIXq6PkavSFIIGsvA9pNTIlu56BXlKJFz4j6+DlCpAPprM3jEN1x/erx8cUgqTNOpd4SE=,iv:HnHISfZOkYGJdqPMhxnvC5RjI418a7jwmpSe8GeYTZ8=,tag:HlFYJp66MbfuwkX+4NUBmw==,type:str]
+    lastmodified: "2024-09-27T14:24:50Z"
+    mac: ENC[AES256_GCM,data:DOE5HlaUNW0A+04Ri8hBrtWh5lW4isju1H0A1BgLkJxJxX9RgNYnh3u1XSzKgkKEdRZ7U56rZ7Wx6OFDX0gnfbolQSwu6zoQWfJHda/uJyakkm/VdAUSghbYru5oph5QRYdA8ara498gK4qHqJLV20DACqZjftHLz9J5CJNH00U=,iv:kgyBkt3qrvDx4Xrm9y/COdnw+7P8QhiFI15X6Kilje0=,tag:UOWqYfb9YebxwGoSQ44R+g==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.9.0
