@@ -26,7 +26,7 @@ configMapGenerator:
       - 20-add-allowed-ssh-keys
   - name: openhab-alloy
     literals:
-      - config.alloy=|
+      - config.alloy=
         logging {
           level = "info"
           format = "logfmt"
