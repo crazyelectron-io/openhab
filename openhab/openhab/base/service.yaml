@@ -1,7 +1,7 @@
 # openhab.git:kustomize/services.yaml
 # notes:
 # Patch this manifest in the overlay with:
-# - namespace, e.g. "namespace: automation"
+# - namespace, e.g. "namespace: openhab-system"
 # - loadBalancerIP, e.g. "loadBalancerIP: 10.100.100.100"
 ---
 apiVersion: v1
