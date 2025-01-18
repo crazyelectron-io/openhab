@@ -3,9 +3,9 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: automation-openhab
+  name: automation-openhab-config
 spec:
-  path: ./openhab/openhab/base
+  path: ./openhab/openhab-config/base
   sourceRef:
     kind: GitRepository
     name: openhab
@@ -16,8 +16,3 @@ spec:
   dependsOn:
     - name: longhorn-system-longhorn
       namespace: flux-system
-    - name: traefik-traefik
-      namespace: flux-system
-    - name: automation-influxdb
-    - name: automation-mosquitto
-    - name: automation-openhab-config

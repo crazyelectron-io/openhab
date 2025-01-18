@@ -196,7 +196,7 @@ spec:
         - name: runtime-cfg
           configMap:
             defaultMode: 420
-            name: openhab-conf-services-runtime-cfg
+            name: openhab-runtime-cfg
             items:
             - key: runtime.cfg
               path: services/runtime.cfg
