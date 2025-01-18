@@ -86,7 +86,7 @@ spec:
         #       memory: "128Mi"
         #       cpu: 100m
         - name: config-reloader
-          image: configmap-reload
+          image: jimmidyson/configmap-reload
           imagePullPolicy: IfNotPresent
           volumeMounts:
           - mountPath: /etc/alloy
