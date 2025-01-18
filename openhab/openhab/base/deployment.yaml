@@ -6,6 +6,8 @@ metadata:
   name: &app openhab
   labels:
     app.kubernetes.io/name: *app
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   progressDeadlineSeconds: 300
   replicas: 1
@@ -85,27 +87,27 @@ spec:
         #     requests:
         #       memory: "128Mi"
         #       cpu: 100m
-        - name: config-reloader
-          image: jimmidyson/configmap-reload
-          imagePullPolicy: IfNotPresent
-          volumeMounts:
-          - mountPath: /etc/alloy
-            name: config
-          - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-            name: kube-api-access-fkctk
-            readOnly: true
-          args:
-            - --volume-dir=/etc/alloy
-            - --webhook-url=http://localhost:12345/-/reload
-          resources:
-            requests:
-              cpu: 1m
-              memory: 5Mi
-            limits:
-              cpu: 100m
-              memory: 32Mi
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
+        # - name: config-reloader
+        #   image: jimmidyson/configmap-reload
+        #   imagePullPolicy: IfNotPresent
+        #   volumeMounts:
+        #   - mountPath: /etc/alloy
+        #     name: config
+        #   - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        #     name: kube-api-access-fkctk
+        #     readOnly: true
+        #   args:
+        #     - --volume-dir=/etc/alloy
+        #     - --webhook-url=http://localhost:12345/-/reload
+        #   resources:
+        #     requests:
+        #       cpu: 1m
+        #       memory: 5Mi
+        #     limits:
+        #       cpu: 100m
+        #       memory: 32Mi
+        #   terminationMessagePath: /dev/termination-log
+        #   terminationMessagePolicy: File
         - name: openhab
           image: openhab/openhab:4.3.2-debian
           imagePullPolicy: IfNotPresent
@@ -200,21 +202,21 @@ spec:
             items:
             - key: runtime.cfg
               path: services/runtime.cfg
-        - name: kube-api-access-fkctk
-          projected:
-            defaultMode: 420
-            sources:
-            - serviceAccountToken:
-                expirationSeconds: 3607
-                path: token
-            - configMap:
-                items:
-                - key: ca.crt
-                  path: ca.crt
-                name: kube-root-ca.crt
-            - downwardAPI:
-                items:
-                - fieldRef:
-                    apiVersion: v1
-                    fieldPath: metadata.namespace
-                  path: namespace
+        # - name: kube-api-access-fkctk
+        #   projected:
+        #     defaultMode: 420
+        #     sources:
+        #     - serviceAccountToken:
+        #         expirationSeconds: 3607
+        #         path: token
+        #     - configMap:
+        #         items:
+        #         - key: ca.crt
+        #           path: ca.crt
+        #         name: kube-root-ca.crt
+        #     - downwardAPI:
+        #         items:
+        #         - fieldRef:
+        #             apiVersion: v1
+        #             fieldPath: metadata.namespace
+        #           path: namespace
