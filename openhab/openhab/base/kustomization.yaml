@@ -20,6 +20,7 @@ configMapGenerator:
       - openhab_https_port="8443"
       - user_id="9001"
       - group_id="9001"
+      - loki_url="http://loki-svc.monitoring-system.svc.cluster.local"
   - name: openhab-init
     files:
       - 20-add-allowed-ssh-keys
