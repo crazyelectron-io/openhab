@@ -107,7 +107,7 @@ spec:
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
         - name: openhab
-          image: openhab
+          image: openhab/openhab:4.3.2-debian
           imagePullPolicy: IfNotPresent
           resources:
             limits:
