@@ -150,40 +150,40 @@ spec:
           envFrom:
             - configMapRef:
                 name: openhab-env
-      initContainers:
-        - name: loki-logger
-          image: grafana/alloy
-          imagePullPolicy: IfNotPresent
-          restartPolicy: Always
-          volumeMounts:
-            - name: openhab-data
-              mountPath: /openhab/userdata
-              subPath: userdata
-            - mountPath: /etc/alloy
-              name: config
-          args:
-            - run
-            - /etc/alloy/config.alloy
-            - --storage.path=/tmp/alloy
-            - --server.http.listen-addr=0.0.0.0:12345
-            - --server.http.ui-path-prefix=/
-            - --disable-reporting
-            - --stability.level=generally-available
-          env:
-          - name: HOSTNAME
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: spec.nodeName
-          - name: LOKI_URL
-            valueFrom:
-              configMapKeyRef:
-                name: openhab-env
-                key: loki_url
-          ports:
-          - containerPort: 12345
-            name: http-metrics
-            protocol: TCP
+      # initContainers:
+      #   - name: loki-logger
+      #     image: grafana/alloy
+      #     imagePullPolicy: IfNotPresent
+      #     restartPolicy: Always
+      #     volumeMounts:
+      #       - name: openhab-data
+      #         mountPath: /openhab/userdata
+      #         subPath: userdata
+      #       - mountPath: /etc/alloy
+      #         name: config
+      #     args:
+      #       - run
+      #       - /etc/alloy/config.alloy
+      #       - --storage.path=/tmp/alloy
+      #       - --server.http.listen-addr=0.0.0.0:12345
+      #       - --server.http.ui-path-prefix=/
+      #       - --disable-reporting
+      #       - --stability.level=generally-available
+      #     env:
+      #     - name: HOSTNAME
+      #       valueFrom:
+      #         fieldRef:
+      #           apiVersion: v1
+      #           fieldPath: spec.nodeName
+      #     - name: LOKI_URL
+      #       valueFrom:
+      #         configMapKeyRef:
+      #           name: openhab-env
+      #           key: loki_url
+      #     ports:
+      #     - containerPort: 12345
+      #       name: http-metrics
+      #       protocol: TCP
       volumes:
         - name: openhab-data
           persistentVolumeClaim:
