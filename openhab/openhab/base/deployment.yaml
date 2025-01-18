@@ -25,66 +25,66 @@ spec:
         app.kubernetes.io/name: *app
     spec:
       containers:
-        - name: openhab-ssh
-          image: openssh-server
-          ports:
-            - containerPort: 2222
-          volumeMounts:
-            - name: openhab-data
-              mountPath: /openhab/userdata
-              subPath: userdata
-            - name: openhab-data
-              mountPath: /openhab/conf
-              subPath: conf
-            - name: openhab-data
-              mountPath: /openhab/addons
-              subPath: addons
-            - name: localtime
-              mountPath: /etc/localtime
-              readOnly: true
-          env:
-          - name: PUID
-            valueFrom:
-              configMapKeyRef:
-                name: openhab-env
-                key: user_id
-          - name: PGID
-            valueFrom:
-              configMapKeyRef:
-                name: openhab-env
-                key: group_id
-          - name: TZ
-            valueFrom:
-              configMapKeyRef:
-                name: openhab-env
-                key: tz
-          - name: USER_NAME
-            valueFrom:
-              secretKeyRef:
-                name: openhab
-                key: openhab_user
-          - name: PUBLIC_KEY_URL
-            valueFrom:
-              secretKeyRef:
-                name: openhab
-                key: public_key_url
-          - name: SUDO_ACCESS
-            value: "true"
-          - name: PASSWORD_ACCESS
-            value: "false"
-          - name: LISTEN_PORT
-            value: "2222"
-          - name: TCP_FORWARDING
-            value: "true"
-          - name: LOG_STDOUT
-            value: "true"
-          resources:
-            limits:
-              memory: "256Mi"
-              cpu: 300m
-            requests:
-              memory: "128Mi"
-              cpu: 100m
+        # - name: openhab-ssh
+        #   image: openssh-server
+        #   ports:
+        #     - containerPort: 2222
+        #   volumeMounts:
+        #     - name: openhab-data
+        #       mountPath: /openhab/userdata
+        #       subPath: userdata
+        #     - name: openhab-data
+        #       mountPath: /openhab/conf
+        #       subPath: conf
+        #     - name: openhab-data
+        #       mountPath: /openhab/addons
+        #       subPath: addons
+        #     - name: localtime
+        #       mountPath: /etc/localtime
+        #       readOnly: true
+        #   env:
+        #   - name: PUID
+        #     valueFrom:
+        #       configMapKeyRef:
+        #         name: openhab-env
+        #         key: user_id
+        #   - name: PGID
+        #     valueFrom:
+        #       configMapKeyRef:
+        #         name: openhab-env
+        #         key: group_id
+        #   - name: TZ
+        #     valueFrom:
+        #       configMapKeyRef:
+        #         name: openhab-env
+        #         key: tz
+        #   - name: USER_NAME
+        #     valueFrom:
+        #       secretKeyRef:
+        #         name: openhab
+        #         key: openhab_user
+        #   - name: PUBLIC_KEY_URL
+        #     valueFrom:
+        #       secretKeyRef:
+        #         name: openhab
+        #         key: public_key_url
+        #   - name: SUDO_ACCESS
+        #     value: "true"
+        #   - name: PASSWORD_ACCESS
+        #     value: "false"
+        #   - name: LISTEN_PORT
+        #     value: "2222"
+        #   - name: TCP_FORWARDING
+        #     value: "true"
+        #   - name: LOG_STDOUT
+        #     value: "true"
+        #   resources:
+        #     limits:
+        #       memory: "256Mi"
+        #       cpu: 300m
+        #     requests:
+        #       memory: "128Mi"
+        #       cpu: 100m
         - name: config-reloader
           image: configmap-reload
           imagePullPolicy: IfNotPresent
