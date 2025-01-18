@@ -7,4 +7,5 @@ resources:
   - namespace.yaml
   - influxdb/kustomization-fluxCRD.yaml
   - mosquitto/kustomization-fluxCRD.yaml
+  - openhab-config/kustomization-fluxCRD.yaml
   - openhab/kustomization-fluxCRD.yaml
