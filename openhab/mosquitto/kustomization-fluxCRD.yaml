@@ -9,6 +9,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: openhab
+    namespace: flux-system
   interval: 5m
   prune: true
   wait: true
