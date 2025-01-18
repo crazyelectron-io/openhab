@@ -3,15 +3,15 @@
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: openhab
+  name: &app openhab
 spec:
   entryPoints:
     - websecure
   routes:
     - kind: Rule
-      match: "Host(`fixme.example.com`)"
+      match: "Host(`oh.${SECRET_DOMAIN_0}`)"
       services:
         - kind: Service
-          name: openhab
+          name: *app
           port: 80
   tls: {}
